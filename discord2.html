@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Siento</title>
     <style>
-        body {
+              body {
             background: url('delfin-pony.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
@@ -16,6 +16,7 @@
             font-family: Arial, sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             overflow: hidden;
+            padding: 20px;
         }
         .mensaje {
             background: rgba(0, 0, 0, 0.5);
@@ -23,23 +24,24 @@
             border-radius: 10px;
             z-index: 1;
             animation: fadeIn 2s ease-in-out;
+            max-width: 90%;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1em;
         }
         .foto {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
         }
         .btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 1em;
             color: white;
             background: #ff4081;
             border: none;
@@ -47,26 +49,27 @@
             cursor: pointer;
             transition: background 0.3s;
             text-decoration: none;
+            display: inline-block;
         }
         .btn:hover {
             background: #e91e63;
         }
-        /* .heart {
-            position: absolute;
-            color: red;
-            font-size: 2em;
-            animation: floatUp 1.5s ease-in-out forwards;
-        } */
-
         .heart {
             position: absolute;
             color: red;
-            font-size: 4em;
+            font-size: 6em;
             animation: floatUp 2s ease-in-out forwards;
         }
         @keyframes floatUp {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-100px); }
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-50px) scale(1.3); }
+            100% { opacity: 0; transform: translateY(-120px) scale(1.5); }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5em; }
+            p { font-size: 0.9em; }
+            .btn { font-size: 0.9em; padding: 8px 12px; }
+            .heart { font-size: 4em; }
         }
     </style>
 </head>
