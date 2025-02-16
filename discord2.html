@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Siento</title>
+    <style>
+        body {
+            background: url('delfin-pony.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+        .mensaje {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #e91e63;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 2em;
+            animation: floatUp 1.5s ease-in-out forwards;
+        }
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-100px); }
+        }
+    </style>
+</head>
+<body onload="iniciarMusica()">
+    <audio id="audio" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+    <div class="mensaje">
+        <img src="fatima.jpeg" alt="Tu Foto" class="foto">
+        <h1>Yeeeeee , C emociona!.:'v</h1><br>
+        <h1>Esperate... antes que nada..</h1>
+        <h1>Lo siento... enserio, fui una mala persona contigo</h1>
+        <p>Lo siento mucho si te hice daño.</p>
+        <p>Me alegra tanto volver a escuchar tu voz.</p>
+        <p>Siempre estaré aquí para ti.</p>
+        <p>spamea siii 💖,Se multiplicaran tu hermoso corazoncito..🙌</p>
+        <button class="btn" onclick="mostrarCorazon()">Sí</button>
+        <a class="btn" href="https://discord.gg/KYjyrP5X" target="_blank">Ahora si entra acui p</a>
+        <br>
+        <button class="btn" onclick="detenerMusicaYVolver('f5.html')">Regresar</button>
+    </div>
+    <script>
+      
+
+/* window.addEventListener("load", function(){
+  alert(location.href);
+}) */
+
+        function iniciarMusica() {
+            let audio = document.getElementById("audio");
+            audio.play();
+        }
+
+        function detenerMusicaYVolver(url) {
+            let audio = document.getElementById("audio");
+            audio.pause();
+            audio.currentTime = 0;
+            window.location.href = url;
+        }
+
+        function mostrarCorazon() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 90 + "%";
+            heart.style.top = "50%";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1500);
+        }
+    </script>
+</body>
+</html>

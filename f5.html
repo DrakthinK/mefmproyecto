@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdóname</title>
+    <style>
+        body {
+            background: url('delfin-pony.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+        .mensaje {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            animation: typing 4s steps(40) infinite alternate;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('delfin-pony.jpg') no-repeat center center/cover;
+            animation: moveBackground 10s linear infinite alternate;
+        }
+        @keyframes moveBackground {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('stars.png') repeat;
+            animation: twinkle 5s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+    <div class="bg-animation"></div>
+    <div class="stars"></div>
+    <div class="mensaje">
+        <h1>Perdóname...</h1>
+        <p>No hay un solo día en que no piense en ti.</p>
+        <p>Extraño escuchar tu voz, cada palabra, cada risa...</p>
+        <p>Siempre que veas la Luna, recuerda que estoy pensando en ti.</p>
+        <p>Aquí siempre tendrás a alguien que te apoyará sin importar qué.</p>
+        <p>Lo siento de todo corazón. Ojalá me des la oportunidad de enmendar mi error.</p>
+<!--         <button class="btn" onclick="iniciarMusica()">Reproducir Música</button> -->
+        <p>¿Me disculpas? ¿Me perdonas a un desastre como yo? 😔</p>
+        <button class="btn" onclick="respuestaPerdon(true)">Sí</button>
+<!--         <button class="btn" onclick="window.location.href='discord2.html'">No</button> -->
+        <button class="btn" onclick="respuestaPerdonT(false)">No</button>
+        <p id="respuesta" style="display:none; font-size: 1.5em; color: #ffeb3b; margin-top: 20px;"></p>
+    </div>
+    <script>
+        function iniciarMusica() {
+            let audio = document.getElementById("audio");
+            audio.play();
+        }
+        function respuestaPerdon(perdona) {
+            iniciarMusica();
+            let mensaje = document.getElementById("respuesta");
+            if (perdona) {
+                mensaje.innerHTML = `Gracias por darme otra oportunidad 💖 <br><a href="https://wa.me/974125552" target="_blank" style="color: #ffeb3b; text-decoration: none;">Estare aquí</a>         <button class="btn" onclick="window.location.href='discord2.html'"> entra acui al desscord</button>`;
+              
+            }
+            mensaje.style.display = "block";
+        }
+
+        function respuestaPerdonT(perdona) {
+            iniciarMusica();
+            let mensaje = document.getElementById("respuesta");
+            if (!perdona) {
+
+                mensaje.innerHTML = `No importa, pero quiero que sepas que aquí siempre tendrás a alguien que no te olvida. Siempre te esperaré para jugar y escuchar tu voz. <br> <button class="btn" onclick="window.location.href='discord2.html?=no'">Ven al descord pue 😔</button>`;
+
+              
+            }
+            mensaje.style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
+
