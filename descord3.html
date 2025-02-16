@@ -51,13 +51,6 @@
         .btn:hover {
             background: #e91e63;
         }
-        /* .heart {
-            position: absolute;
-            color: red;
-            font-size: 2em;
-            animation: floatUp 1.5s ease-in-out forwards;
-        } */
-
         .heart {
             position: absolute;
             color: red;
@@ -65,35 +58,29 @@
             animation: floatUp 2s ease-in-out forwards;
         }
         @keyframes floatUp {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-100px); }
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-50px) scale(1.2); }
+            100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
         }
     </style>
 </head>
 <body onload="iniciarMusica()">
     <audio id="audio" loop>
-        <source src="./musica.mp3" type="audio/mpeg">
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
     <div class="mensaje">
-        <img src="./fatima.jpeg" alt="Tu Foto" class="foto">
-        <h1>Yeeeeee , C emociona!.:'v</h1>
-        <h1>Esperate... antes que nada..</h1>
-        <h3>Lo siento... enserio, fui una mala persona contigo</h3>
+        <img src="foto.jpg" alt="Tu Foto" class="foto">
+        <h1>Lo siento...</h1>
         <p>Lo siento mucho si te hice daño.</p>
         <p>Me alegra tanto volver a escuchar tu voz.</p>
         <p>Siempre estaré aquí para ti.</p>
-        <p>spamea siii 💖,Se multiplicaran tu hermoso corazoncito..🙌</p>
         <button class="btn" onclick="mostrarCorazon()">Sí</button>
-        <a class="btn" href="https://discord.gg/KYjyrP5X" target="_blank">Ahora si entra acui p</a>
+        <a class="btn" href="https://discord.gg/tu-servidor" target="_blank">Entra aquí pa oírte p</a>
+        <br>
         <button class="btn" onclick="detenerMusicaYVolver('index.html')">Regresar</button>
+        <button class="btn" onclick="detenerMusicaYVolver('principal.html')">Ir a la Página Principal</button>
     </div>
     <script>
-      
-
-/* window.addEventListener("load", function(){
-  alert(location.href);
-}) */
-
         function iniciarMusica() {
             let audio = document.getElementById("audio");
             audio.play();
@@ -106,17 +93,6 @@
             window.location.href = url;
         }
 
-/*         function mostrarCorazon() {
-            let heart = document.createElement("div");
-            heart.innerHTML = "❤️";
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 90 + "%";
-            heart.style.top = "50%";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 1500);
-        } */
-
-
         function mostrarCorazon() {
             let heart = document.createElement("div");
             heart.innerHTML = "❤️";
@@ -126,7 +102,6 @@
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 2000);
         }
-
     </script>
 </body>
 </html>
